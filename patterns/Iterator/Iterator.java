@@ -74,7 +74,7 @@ public class LinkedList<Item> implements Iterable<Item> {
   
   public static void main(String[] args) {
         // Is iterable because of iterator design pattern. Can use the iterator while loop instead.
-        LinkedList<String>() list = new LinkedList<String>();
+        LinkedList<String> list = new LinkedList<String>();
         for(String item : linkedString)
         {
             System.out.println(item);
