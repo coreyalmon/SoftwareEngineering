@@ -90,4 +90,9 @@ public class FoodFactory {
 			this.setName("Cereal");
 		}
 	}
+	public static void main(String[] args) {
+		FoodFactory factory = new FoodFactory();
+		FoodFactory muffin = factory.getFood(FOOD_TYPE_MUFFIN);
+		System.out.println(muffin.getName());
+	}
 }
