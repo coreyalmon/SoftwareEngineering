@@ -1,4 +1,4 @@
-//ORIGINATOR CLASS does names as an example
+//ORIGINATOR CLASS does names as an example. Acts as the client.
 public class Originator
 {
     protected String name;
