@@ -9,6 +9,7 @@ import java.awt.GridBagLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+// Meant to be the panel used for the shopping page
 public class ShoppingPanel extends AbstractPanel {
 
 
