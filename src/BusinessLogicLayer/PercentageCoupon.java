@@ -1,22 +1,26 @@
-public class PercentageCoupon extends Coupon{
+package BusinessLogicLayer;
+
+public class PercentageCoupon extends Coupon {
     private double percentDeduct;
     private ShoppingLogic shoppingLogic;
 
-    PercentageCoupon(String description, double percentDeduct, ShoppingLogic shoppingLogic){
-        super(description);
+
+    public PercentageCoupon(String description, double percentDeduct, ShoppingLogic shoppingLogic, COUPON_TYPE coupon_type){
+        super(description, coupon_type);
         this.percentDeduct = percentDeduct;
         this.shoppingLogic = shoppingLogic;
     }
 
-    PercentageCoupon(){
+    public PercentageCoupon(){
         super();
     }
 
     @Override
     public void cutPrice() {
-        if(! isUsed){
-            shoppingLogic.setSum(shoppingLogic.getSum() * (1 - percentDeduct));
-            isUsed = true;
-        }
+        shoppingLogic.setTotalCostOfItems(shoppingLogic.getTotalCostOfItems() * (1 - percentDeduct));
+    }
+
+    public COUPON_TYPE getCouponType() {
+        return super.getCoupon_type();
     }
 }
