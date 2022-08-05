@@ -1,19 +1,19 @@
-public class FixedAmountCoupon extends Coupon{
+package BusinessLogicLayer;
+
+public class FixedAmountCoupon extends Coupon {
     private int fixedDeduct;
     private ShoppingLogic shoppingLogic;
 
-    FixedAmountCoupon(String description, int fixedDeduct, ShoppingLogic shoppingLogic){
-        super(description);
+
+    FixedAmountCoupon(String description, int fixedDeduct, ShoppingLogic shoppingLogic, COUPON_TYPE coupon_type){
+        super(description, coupon_type);
         this.fixedDeduct = fixedDeduct;
         this.shoppingLogic = shoppingLogic;
     }
 
     @Override
     public void cutPrice() {
-        if(! isUsed){
-            shoppingLogic.setSum(shoppingLogic.getSum() - fixedDeduct);
-            isUsed = true;
-        }
+        shoppingLogic.setTotalCostOfItems(shoppingLogic.getTotalCostOfItems() - fixedDeduct);
     }
 
     public ShoppingLogic getShoppingTracker() {
@@ -22,5 +22,9 @@ public class FixedAmountCoupon extends Coupon{
 
     public int getFixedDeduct() {
         return fixedDeduct;
+    }
+
+    public COUPON_TYPE getCouponType() {
+        return super.getCoupon_type();
     }
 }
