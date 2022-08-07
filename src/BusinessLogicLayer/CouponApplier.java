@@ -18,19 +18,4 @@ public class CouponApplier {
         if(coupon != null)
             coupon.cutPrice();
     }
-
-//    public void applyCoupon(){
-//        if(previousCouponApplier != null){
-//            previousCouponApplier.applyCoupon();
-//        }
-//
-//        if(coupon != null){
-//            coupon.cutPrice();
-//            System.out.println(coupon.getDescription());
-//        }else{
-//            System.out.println();
-//            System.out.println();
-//        }
-//    }
-
 }
