@@ -13,10 +13,10 @@ public class CouponPopUpUI {
     private JFrame popUpWindow;
     private JPanel couponPanel;
     private ShoppingLogic shoppingLogic;
-    private List<Coupon> couponList;
+    private Iterator<Coupon> couponIterator;
     private CouponApplier lastestCouponApplier;
     private List<CouponVoucher> couponVoucherList;
-    CouponObserver couponObserver = new CouponObserver();
+    private CouponObserver couponObserver = new CouponObserver();
 
     public CouponPopUpUI(ShoppingLogic shoppingLogic, boolean isActive){
         this.shoppingLogic = shoppingLogic;
@@ -42,12 +42,12 @@ public class CouponPopUpUI {
 
     private void initializeCouponPanel()
     {
-        couponList = new CouponLibrary(shoppingLogic).getCouponList();
+        couponIterator = new CouponLibrary(shoppingLogic).getCouponIterator();
         lastestCouponApplier = new CouponApplier(null, null);
         couponVoucherList = new ArrayList<>();
 
-        for (var coupon: couponList) {
-            System.out.println(coupon.getClass());
+        while(couponIterator.hasNext()) {
+            var coupon = couponIterator.next();
             CouponVoucher couponVoucher = addVoucher(coupon);
             couponVoucherList.add(couponVoucher);
             couponVoucher.addActionListener(new ActionListener() {
