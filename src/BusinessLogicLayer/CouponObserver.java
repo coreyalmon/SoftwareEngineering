@@ -20,10 +20,17 @@ public class CouponObserver implements Observer {
     public boolean isReturningUser()
     {return ReturningUser;}
 
-    public void update() {
-        if (shoppingLogic.getTotalNumberOfItems()>2){
-            TwoItems=true;
-        }
+    public void update()
+    {
+        if (shoppingLogic.getTotalNumberOfItems()>2)
+        {TwoItems=true;}
+        
+        if (shoppingLogic.getUserName()==null)
+        {NewUser=true;}
+       
+        else if (shoppingLogic.getUserName()!=null)
+        {ReturningUser=true;}
+
       
 
     }
