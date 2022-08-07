@@ -58,122 +58,121 @@ public class CartUX extends CartI implements ActionListener{
 		totalPanel.setPreferredSize(new Dimension(500,125));
 		totalPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		
-
-			totalLabel = new JLabel();
-			totalLabel.setPreferredSize(new Dimension(300,125));
-			totalLabel.setText("Total: $" + String.valueOf(shoppingLogic.getTotalCostOfItems()));
+		totalLabel = new JLabel();
+		totalLabel.setPreferredSize(new Dimension(300,125));
+		totalLabel.setText("Total: $" + String.valueOf(shoppingLogic.getTotalCostOfItems()));
 		
-			payButton = new JButton("Pay");
-			payButton.setPreferredSize(new Dimension(75,25));
-			payButton.addActionListener(this);
+		payButton = new JButton("Pay");
+		payButton.setPreferredSize(new Dimension(75,25));
+		payButton.addActionListener(this);
 		
-			itemPanels = new JPanel[9];
-			imageLabels = new JLabel[9];
-			imageIcons = new ImageIcon[9];
-			nameLabels = new JLabel[9];
-			quantLabels = new JLabel[9];
-			priceLabels = new JLabel[9];
+		itemPanels = new JPanel[9];
+		imageLabels = new JLabel[9];
+		imageIcons = new ImageIcon[9];
+		nameLabels = new JLabel[9];
+		quantLabels = new JLabel[9];
+		priceLabels = new JLabel[9];
 			
-			//will go through each item one by one 
-			//if there is 0 of that item, a panel will not be made
-			for(int i = 0; i<9; i++) {
-				if(shoppingLogic.getAmountOfType(foodTypes[i])!=0) {
-					itemPanels[i] = new JPanel();
-					imageIcons[i] = new ImageIcon();
-					imageLabels[i] = new JLabel();
-					nameLabels[i] = new JLabel();
-					quantLabels[i] = new JLabel();
-					priceLabels[i] = new JLabel();
-					switch(i) {
+		//will go through each item one by one 
+		//if there is 0 of that item, a panel will not be made
+		for(int i = 0; i<9; i++) {
+			if(shoppingLogic.getAmountOfType(foodTypes[i])!=0) {
+				itemPanels[i] = new JPanel();
+				imageIcons[i] = new ImageIcon();
+				imageLabels[i] = new JLabel();
+				nameLabels[i] = new JLabel();
+				quantLabels[i] = new JLabel();
+				priceLabels[i] = new JLabel();
+				switch(i) {
 					case 0:
 						addToListPanel(foodTypes[i], 
-								imageIcons[i], 
-								imageLabels[i], 
-								nameLabels[i], 
-								quantLabels[i], 
-								priceLabels[i], 
-								itemPanels[i]);
+							imageIcons[i], 
+							imageLabels[i], 
+							nameLabels[i], 
+							quantLabels[i], 
+							priceLabels[i], 
+							itemPanels[i]);
 						break;
 					case 1:
 						addToListPanel(foodTypes[i], 
-								imageIcons[i], 
-								imageLabels[i], 
-								nameLabels[i], 
-								quantLabels[i], 
-								priceLabels[i], 
-								itemPanels[i]);
+							imageIcons[i], 
+							imageLabels[i], 
+							nameLabels[i], 
+							quantLabels[i], 
+							priceLabels[i], 
+							itemPanels[i]);
 						break;
 					case 2:
 						addToListPanel(foodTypes[i], 
-								imageIcons[i], 
-								imageLabels[i], 
-								nameLabels[i], 
-								quantLabels[i], 
-								priceLabels[i],
-								itemPanels[i]);
+							imageIcons[i], 
+							imageLabels[i], 
+							nameLabels[i], 
+							quantLabels[i], 
+							priceLabels[i],
+							itemPanels[i]);
 						break;
 					case 3:
 						addToListPanel(foodTypes[i], 
-								imageIcons[i], 
-								imageLabels[i], 
-								nameLabels[i],
-								quantLabels[i], 
-								priceLabels[i], 
-								itemPanels[i]);
+							imageIcons[i], 
+							imageLabels[i], 
+							nameLabels[i],
+							quantLabels[i], 
+							priceLabels[i], 
+							itemPanels[i]);
 						break;
 					case 4:
 						addToListPanel(foodTypes[i], 
-								imageIcons[i], 
-								imageLabels[i],
-								nameLabels[i], 
-								quantLabels[i],
-								priceLabels[i],
-								itemPanels[i]);
+							imageIcons[i], 
+							imageLabels[i],
+							nameLabels[i], 
+							quantLabels[i],
+							priceLabels[i],
+							itemPanels[i]);
 						break;
 					case 5:
 						addToListPanel(foodTypes[i], 
-								imageIcons[i], 
-								imageLabels[i], 
-								nameLabels[i], 
-								quantLabels[i],
-								priceLabels[i], 
-								itemPanels[i]);
+							imageIcons[i], 
+							imageLabels[i], 
+							nameLabels[i], 
+							quantLabels[i],
+							priceLabels[i], 
+							itemPanels[i]);
 						break;
 					case 6:
 						addToListPanel(foodTypes[i], 
-								imageIcons[i], 
-								imageLabels[i], 
-								nameLabels[i], 
-								quantLabels[i], 
-								priceLabels[i],
-								itemPanels[i]);
+							imageIcons[i], 
+							imageLabels[i], 
+							nameLabels[i], 
+							quantLabels[i], 
+							priceLabels[i],
+							itemPanels[i]);
 						break;
 					case 7:
 						addToListPanel(foodTypes[i],
-								imageIcons[i], 
-								imageLabels[i], 
-								nameLabels[i], 
-								quantLabels[i],
-								priceLabels[i],
-								itemPanels[i]);
+							imageIcons[i], 
+							imageLabels[i], 
+							nameLabels[i], 
+							quantLabels[i],
+							priceLabels[i],
+							itemPanels[i]);
 						break;
 					case 8:
 						addToListPanel(foodTypes[i],
-								imageIcons[i], 
-								imageLabels[i], 
-								nameLabels[i], 
-								quantLabels[i],
-								priceLabels[i],
-								itemPanels[i]);
+							imageIcons[i], 
+							imageLabels[i], 
+							nameLabels[i], 
+							quantLabels[i],
+							priceLabels[i],
+							itemPanels[i]);
 						break;
-					}
-					containerPanel.add(itemPanels[i]);
 				}
+				containerPanel.add(itemPanels[i]);
 			}
+		}
 			
-			totalPanel.add(totalLabel);
-			totalPanel.add(payButton);
-//		}
+		totalPanel.add(totalLabel);
+		totalPanel.add(payButton);
+
 		panel.add(containerPanel);
 		panel.add(totalPanel);
 	}
