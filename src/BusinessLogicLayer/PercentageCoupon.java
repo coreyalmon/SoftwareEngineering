@@ -11,10 +11,6 @@ public class PercentageCoupon extends Coupon {
         this.shoppingLogic = shoppingLogic;
     }
 
-    public PercentageCoupon(){
-        super();
-    }
-
     @Override
     public void cutPrice() {
         shoppingLogic.setTotalCostOfItems(shoppingLogic.getTotalCostOfItems() * (1 - percentDeduct));
