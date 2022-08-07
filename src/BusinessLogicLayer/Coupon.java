@@ -1,6 +1,6 @@
 package BusinessLogicLayer;
 
-public abstract class  Coupon {
+public abstract class Coupon {
     private String description;
     private COUPON_TYPE coupon_type;
 
@@ -8,8 +8,6 @@ public abstract class  Coupon {
         this.description = description;
         this.coupon_type = coupon_type;
     }
-
-    public Coupon(){}
 
     public String getDescription() {
         return description;
