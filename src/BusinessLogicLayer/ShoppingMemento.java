@@ -9,6 +9,9 @@ public class ShoppingMemento extends ShoppingCart
     {
        this.shoppingCart = shoppingCart;
        
+    }
 
+    public ShoppingCart getState() {
+        return shoppingCart;
     }
 }
