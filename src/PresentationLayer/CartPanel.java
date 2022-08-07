@@ -7,13 +7,13 @@ import javax.swing.*;
 import BusinessLogicLayer.*;
 import DataAccessLayer.FoodType;
 
-public class CartPanel extends AbstractPanel implements ActionListener{
+public class CartUX extends CartI implements ActionListener{
 	
 	private ShoppingCart shoppingCart;
 	private ShoppingLogic shoppingLogic;
 	private JPanel containerPanel, totalPanel;
 	private JPanel[] itemPanels;
-	private JLabel totalLabel, noItemsLabel;
+	private JLabel totalLabel;
 	private JLabel[] imageLabels;
 	private JLabel[] nameLabels;
 	private JLabel[] quantLabels;
@@ -29,15 +29,18 @@ public class CartPanel extends AbstractPanel implements ActionListener{
 			FoodType.FOOD_TYPE_EGG,
 			FoodType.FOOD_TYPE_BREAD,
 			FoodType.FOOD_TYPE_CEREAL};
-			
+	CardPanel cardPanel;
+	ShoppingPanel shoppingPanel;
 
-	CartPanel(ShoppingCart shoppingCart){
+	CartUX(ShoppingCart shoppingCart){
 		this.shoppingCart = shoppingCart;
 		this.addComponentsToPanel();
 	}
 	
 	@Override
 	public void addComponentsToPanel() {
+		
+		panel = new JPanel();
 		shoppingLogic = new ShoppingLogic(shoppingCart);
 		
 		panel = new JPanel();
@@ -55,15 +58,7 @@ public class CartPanel extends AbstractPanel implements ActionListener{
 		totalPanel.setPreferredSize(new Dimension(500,125));
 		totalPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
 		
-		if(shoppingCart.isEmpty()) {
-			noItemsLabel = new JLabel("There are NO items in the cart");
-			noItemsLabel.setPreferredSize(new Dimension(500,125));
-			backButton = new JButton("BACK");
-			backButton.setPreferredSize(new Dimension(75,25));
-			backButton.addActionListener(this);
-			totalPanel.add(backButton);
-			containerPanel.add(noItemsLabel);
-		}else {
+
 			totalLabel = new JLabel();
 			totalLabel.setPreferredSize(new Dimension(300,125));
 			totalLabel.setText("Total: $" + String.valueOf(shoppingLogic.getTotalCostOfItems()));
@@ -178,10 +173,11 @@ public class CartPanel extends AbstractPanel implements ActionListener{
 			
 			totalPanel.add(totalLabel);
 			totalPanel.add(payButton);
-		}
+//		}
 		panel.add(containerPanel);
 		panel.add(totalPanel);
 	}
+	
 	
 	public void addToListPanel(FoodType foodType, 
 			ImageIcon imageIcon, 
