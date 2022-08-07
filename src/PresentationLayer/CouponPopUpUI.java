@@ -16,12 +16,13 @@ public class CouponPopUpUI {
     private Iterator<Coupon> couponIterator;
     private CouponApplier lastestCouponApplier;
     private List<CouponVoucher> couponVoucherList;
-    private CouponObserver couponObserver = new CouponObserver();
+    private CouponObserver couponObserver;
 
-    public CouponPopUpUI(ShoppingLogic shoppingLogic, boolean isActive){
+    public CouponPopUpUI(ShoppingLogic shoppingLogic){
         this.shoppingLogic = shoppingLogic;
+        this.couponObserver = new CouponObserver();
 
-        if(isActive)
+        if(couponObserver.isTwoItems() || couponObserver.isReturningUser() || couponObserver.isNewUser())
             launchUI();
     }
 
@@ -102,7 +103,6 @@ public class CouponPopUpUI {
         });
         removeSelectedCouponButton.setBounds(100, 50,50, 100);
 
-
         topPanel.add(headerLabel);
         topPanel.add(useCouponButton);
         topPanel.add(removeSelectedCouponButton);
@@ -133,16 +133,13 @@ public class CouponPopUpUI {
      * @return CouponVoucher object
      */
     public CouponVoucher addVoucher(Coupon coupon){
-        //            if(observerCoupon.isMoreThanTwoItems()）
-//                displaycoupon
-//            else graybox the coupon
         CouponVoucher couponVoucher = new CouponVoucher(coupon, couponObserver);
         couponPanel.add(couponVoucher);
         return couponVoucher;
     }
 
     public static void main(String[] args) {
-        new CouponPopUpUI(new ShoppingLogic(), true);
+        new CouponPopUpUI(new ShoppingLogic());
     }
 
 }
