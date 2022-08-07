@@ -12,7 +12,7 @@ public class CouponApplier {
         this.previousCouponApplier = previousCouponApplier;
     }
 
-    void applyCoupon(){
+    public void applyCoupon(){
         if(previousCouponApplier != null)
             previousCouponApplier.applyCoupon();
         if(coupon != null)
