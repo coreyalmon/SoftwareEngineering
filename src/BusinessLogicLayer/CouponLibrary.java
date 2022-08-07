@@ -1,7 +1,5 @@
 package BusinessLogicLayer;
 
-import BusinessLogicLayer.Coupon;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +12,29 @@ public class CouponLibrary {
         couponList.add(new FixedAmountCoupon("Returning user, get $5 off", 5, shoppingLogic, COUPON_TYPE.COUPON_TYPE_RETURN_USER));
     }
 
-    public List<Coupon> getCouponList() {
-        return couponList;
+    public Iterator<Coupon> getCouponIterator(){
+        return new CouponLibraryIterator(couponList);
+    }
+
+
+    private class CouponLibraryIterator implements Iterator<Coupon>{
+        private int index = 0;
+        private List<Coupon> couponList;
+        private int length;
+
+        CouponLibraryIterator(List<Coupon> couponList){
+            this.couponList = couponList;
+            this.length = couponList.size();
+        }
+
+        public boolean hasNext(){
+            return index < length;
+        }
+
+        public Coupon next(){
+            Coupon coupon = couponList.get(index);
+            index++;
+            return coupon;
+        }
     }
 }
