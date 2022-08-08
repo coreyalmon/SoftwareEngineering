@@ -16,7 +16,7 @@ public class FixedAmountCoupon extends Coupon {
         shoppingLogic.setTotalCostOfItems(shoppingLogic.getTotalCostOfItems() - fixedDeduct);
     }
 
-    public ShoppingLogic getShoppingTracker() {
+    public ShoppingLogic getShoppingLogic() {
         return shoppingLogic;
     }
 
