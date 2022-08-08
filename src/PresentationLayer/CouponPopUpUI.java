@@ -14,7 +14,7 @@ public class CouponPopUpUI {
     private JPanel couponPanel;
     private ShoppingLogic shoppingLogic;
     private Iterator<Coupon> couponIterator;
-    private CouponApplier lastestCouponApplier;
+    private CouponDecorator lastestCouponApplier;
     private List<CouponVoucher> couponVoucherList;
     private CouponObserver couponObserver;
 
