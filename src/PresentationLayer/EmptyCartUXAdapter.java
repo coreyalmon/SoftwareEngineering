@@ -16,13 +16,15 @@ public class EmptyCartUXAdapter extends CartI implements ActionListener{
 	private JLabel noItemsLabel;
 	private JButton backButton;
 	
-	EmptyCartUXAdapter(ShoppingCart shoppingCart){
-		this.shoppingCart = shoppingCart
+	EmptyCartUXAdapter(){
 		this.addComponentsToPanel();
 	}
 
 	@Override
 	public void addComponentsToPanel() {
+		panel = new JPanel();
+		containerPanel = new JPanel();
+		totalPanel = new JPanel();
 		noItemsLabel = new JLabel("There are NO items in the cart");
 		noItemsLabel.setPreferredSize(new Dimension(500,125));
 		backButton = new JButton("BACK");
@@ -30,7 +32,6 @@ public class EmptyCartUXAdapter extends CartI implements ActionListener{
 		backButton.addActionListener(this);
 		totalPanel.add(backButton);
 		containerPanel.add(noItemsLabel);
-		
 	}
 
 	@Override
