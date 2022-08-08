@@ -10,10 +10,10 @@ public class ConditionalCoupon extends FixedAmountCoupon{
 
     @Override
     public void cutPrice() {
-        var shoppingTracker = super.getShoppingTracker();
-        double sum = shoppingTracker.getTotalCostOfItems();
+        var shoppingLogic = super.getShoppingLogic();
+        double sum = shoppingLogic.getTotalCostOfItems();
         if(minTotal < sum){
-            shoppingTracker.setTotalCostOfItems(sum - super.getFixedDeduct());
+            shoppingLogic.setTotalCostOfItems(sum - super.getFixedDeduct());
         }
     }
 
