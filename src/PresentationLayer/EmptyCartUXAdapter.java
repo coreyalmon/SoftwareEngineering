@@ -7,13 +7,17 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import BusinessLogicLayer.ShoppingCart;
+
 public class EmptyCartUXAdapter extends CartI implements ActionListener{
 	
+	private ShoppingCart shoppingCart;
 	private JPanel containerPanel, totalPanel;
 	private JLabel noItemsLabel;
 	private JButton backButton;
 	
-	void CartI(){
+	EmptyCartUXAdapter(ShoppingCart shoppingCart){
+		this.shoppingCart = shoppingCart
 		this.addComponentsToPanel();
 	}
 
@@ -33,10 +37,6 @@ public class EmptyCartUXAdapter extends CartI implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()== backButton) {
 			
-		}
-		
+		}	
 	}
-	
-	
-
 }
