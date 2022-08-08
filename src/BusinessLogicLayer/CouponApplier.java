@@ -6,7 +6,7 @@ package BusinessLogicLayer;
 public class CouponApplier extends CouponDecorator{
     Coupon coupon;
     
-    public CouponApplier(Coupon coupon, CouponApplier previousCouponApplier){
+    public CouponApplier(Coupon coupon, CouponDecorator previousCouponApplier){
         super(previousCouponApplier);
         this.coupon = coupon;
     }
