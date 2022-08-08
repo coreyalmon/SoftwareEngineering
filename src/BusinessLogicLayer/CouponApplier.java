@@ -3,18 +3,16 @@ package BusinessLogicLayer;
 /**
  * Coupon Decorator utilizing the Decorator Pattern
  */
-public class CouponApplier {
-    private CouponApplier previousCouponApplier;
-    private Coupon coupon;
-
+public class CouponApplier extends CouponDecorator{
+    Coupon coupon;
+    
     public CouponApplier(Coupon coupon, CouponApplier previousCouponApplier){
+        super(previousCouponApplier);
         this.coupon = coupon;
-        this.previousCouponApplier = previousCouponApplier;
     }
 
     public void applyCoupon(){
-        if(previousCouponApplier != null)
-            previousCouponApplier.applyCoupon();
+        super.applyCoupon();
         if(coupon != null)
             coupon.cutPrice();
     }
