@@ -13,4 +13,6 @@ class Singleton
     {
         System.out.println("I exist");
     }
+
+
 }
