@@ -1,0 +1,7 @@
+package BusinessLogicLayer;
+
+public enum COUPON_TYPE {
+    COUPON_TYPE_RETURN_USER,
+    COUPON_TYPE_NEW_USER,
+    COUPON_TYPE_TWO_OR_MORE_ITEMS,
+}
